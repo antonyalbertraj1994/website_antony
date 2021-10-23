@@ -112,7 +112,7 @@
 
 </div>
 
-
+  
   <div class="header1" style="white-space:nowrap;">
   <h1> Research</h1>
 
@@ -123,13 +123,15 @@
   <a href="">Photos           </a>
   </div>
 
+
 <script src="js/main.js"></script>
 
 
- </table>
+
 
  <!--<img src="/website_antony/assets/images/pocketview.jpg" width="20" alt="hello" height="20" align="center">-->
-<table style="table-layout: fixed;width=100%;margin-left:auto;margin-right:auto">
+<table id="research" class="table" style="table-layout: fixed;width=100%;margin-left:auto;margin-right:auto">
+<tbody>
  <tr>
     <td> <img src="/website_antony/assets/images/pocketview.jpg" width="200" height="200" align="center"> </td>
     <td align="justify" valign="top" style="word-wrap: break-word;width:800px"> <b><h3> PocketView: Through-Fabric Information Displays</h3></b> <span class="br"> Antony Albert Raj Irudayaraj,Rishav Agarwal,Nikhita Joshi, Aakar Gupta, Omid Abari, Daniel Vogel </span>
@@ -191,9 +193,37 @@
 	</span>
 	</td>
  </tr>	
+ </tbody>
+
+ </table>
+
+  <script type="text/javascript">
+	  const projectslist=document.querySelector("#research");
+	  console.log(projectslist);
+	  function loadprojects(){
+	  	  const request=new XMLHttpRequest();
+		  request.open("get","C:/Users/antonyalbertraj/Desktop/website_antony/website_antony/datadata/projects.json");
+		  request.onload= () => {
+		  try{
+		  	  const json=JSON.parse(request.responseText);
+				populateprojects(json);
+		  }catch(e){
+		  	  console.warn("could notload")
+		  }
+		  };
+	
+	request.send();
+	}
+
+	function populateprojects(json){
+		console.log(json);
+	}
+  </script>
 
 
 </body>
+
+
 
 
 
