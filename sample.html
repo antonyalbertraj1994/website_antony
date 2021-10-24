@@ -202,7 +202,8 @@
 	  console.log(projectslist);
 	  function loadprojects(){
 	  	  const request=new XMLHttpRequest();
-		  request.open("get","C:/Users/antonyalbertraj/Desktop/website_antony/website_antony/datadata/projects.json");
+		  console.log("started");
+		  request.open("get","http://localhost:8000/website_antony/data/projects.json");
 		  request.onload= () => {
 		  try{
 		  	  const json=JSON.parse(request.responseText);
@@ -210,14 +211,11 @@
 		  }catch(e){
 		  	  console.warn("could notload")
 		  }
-		  };
+	   };
 	
-	request.send();
+		request.send();
 	}
 
-	function populateprojects(json){
-		console.log(json);
-	}
   </script>
 
 
