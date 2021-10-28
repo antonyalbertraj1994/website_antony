@@ -200,20 +200,11 @@
   <script type="text/javascript">
 	  const projectslist=document.querySelector("#research");
 	  console.log(projectslist);
-	  function loadprojects(){
-	  	  const request=new XMLHttpRequest();
-		  console.log("started");
-		  request.open("get","http://localhost:8000/website_antony/data/projects.json");
-		  request.onload= () => {
-		  try{
-		  	  const json=JSON.parse(request.responseText);
-				populateprojects(json);
-		  }catch(e){
-		  	  console.warn("could notload")
-		  }
-	   };
-	
-		request.send();
+	  async function loadprojects(){
+	  const url1='https://github.com/antonyalbertraj1994/website_antony/tree/master/data/detail.txt'
+ 	   const response = await fetch(url1);
+	   const data=await response.text();
+	   console.log(data);
 	}
 
   </script>
